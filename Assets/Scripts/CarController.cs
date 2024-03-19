@@ -12,10 +12,10 @@ public class CarController : MonoBehaviour
     public float maxSpeed = 20;
 
     [Header("Local")]
-    [SerializeField] float accelerationInput = 0;
-    [SerializeField] float steeringInput = 0;
-    [SerializeField] float rotationAngle = 0;
-    [SerializeField] float velocityVsUp = 0;
+    float accelerationInput = 0;
+    float steeringInput = 0;
+    float rotationAngle = 0;
+    float velocityVsUp = 0;
 
     Rigidbody2D rb2d;
 
@@ -98,5 +98,10 @@ public class CarController : MonoBehaviour
     {
         steeringInput = inputVector.x;
         accelerationInput = inputVector.y;
+    }
+
+    public float GetVelocityMagnitude()
+    {
+        return rb2d.velocity.magnitude;
     }
 }
