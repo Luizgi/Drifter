@@ -11,12 +11,20 @@ public class CarController : MonoBehaviour
     public float turnFactor = 1.5f;
     public float maxSpeed = 20;
 
+    [Header("Sprites")]
+    public SpriteRenderer carSprite;
+    public SpriteRenderer shadowSprite;
+
+    [Header("Jumping")]
+    public AnimationCurve jumpCurve;
+    public ParticleSystem particleSystem;
+
     [Header("Local")]
     float accelerationInput = 0;
     float steeringInput = 0;
     float rotationAngle = 0;
     float velocityVsUp = 0;
-
+    bool isJumping = false;
     Rigidbody2D rb2d;
 
     private void Awake()
@@ -103,5 +111,52 @@ public class CarController : MonoBehaviour
     public float GetVelocityMagnitude()
     {
         return rb2d.velocity.magnitude;
+    }
+
+    public void Jump(float jumpHeighScale, float jumpPushScale)
+    {
+        if(!isJumping)
+            StartCoroutine(JumpC(jumpHeighScale, jumpPushScale));
+    }
+    
+    private IEnumerator JumpC(float jumpHeighScale, float jumpPushScale)
+    {
+        isJumping = true;
+
+        float startTime = Time.time;
+        float duration = 2;
+
+        while(isJumping)
+        {
+            float completedPercentage = (Time.time - startTime) / duration;
+            completedPercentage = Mathf.Clamp01(completedPercentage);
+
+            carSprite.transform.localScale = Vector3.one + Vector3.one * jumpCurve.Evaluate(completedPercentage) * jumpHeighScale;
+
+            shadowSprite.transform.localScale = carSprite.transform.localScale * 0.75f;
+
+            shadowSprite.transform.localPosition = new Vector3(1, -1, 0f) * 3f * jumpCurve.Evaluate(completedPercentage) * jumpHeighScale;
+
+            if (completedPercentage == 1f)
+                break;
+
+            yield return null;
+        }
+
+        carSprite.transform.localScale = Vector3.one;
+
+        shadowSprite.transform.localPosition = Vector3.zero;
+        shadowSprite.transform.localScale = carSprite.transform.localScale;
+
+        isJumping = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Jump"))
+        {
+            JumpData jumpData = collision.GetComponent<JumpData>();
+            Jump(jumpData.jumpHeightScale, jumpData.jumpPushScale);
+        }
     }
 }

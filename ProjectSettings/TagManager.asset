@@ -38,18 +38,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 272013823
     locked: 0
   - name: Road
     uniqueID: 3875101119
     locked: 0
+  - name: Obstacle
+    uniqueID: 516065029
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Skidmarks
     uniqueID: 3971271263
     locked: 0
-  - name: Particles
-    uniqueID: 3383700465
-    locked: 0
   - name: Cars
     uniqueID: 99951241
+    locked: 0
+  - name: Particles
+    uniqueID: 3383700465
     locked: 0
