@@ -12,6 +12,8 @@ public class CarSfxHandler : MonoBehaviour
     public AudioSource tireScreeching;
     public AudioSource engine;
     public AudioSource carHit;
+    public AudioSource carJump;
+    public AudioSource carLanding;
 
     CarController carController;
     float desiredEnginePitch = 0.05f;
@@ -65,6 +67,16 @@ public class CarSfxHandler : MonoBehaviour
             tireScreeching.volume = Mathf.Lerp(tireScreeching.volume, 0, Time.deltaTime * 10);
         }
     }
+
+    public void PlayJumpSfx()
+    {
+        carJump.Play();
+    }
+    public void PlayLandingSfx()
+    {
+        carLanding.Play();
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

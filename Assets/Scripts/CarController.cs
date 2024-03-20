@@ -17,7 +17,7 @@ public class CarController : MonoBehaviour
 
     [Header("Jumping")]
     public AnimationCurve jumpCurve;
-    public ParticleSystem particleSystem;
+    public ParticleSystem landing;
 
     [Header("Local")]
     float accelerationInput = 0;
@@ -26,10 +26,14 @@ public class CarController : MonoBehaviour
     float velocityVsUp = 0;
     bool isJumping = false;
     Rigidbody2D rb2d;
+    Collider2D collider;
+    CarSfxHandler sfxHandler;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        collider = GetComponentInChildren<Collider2D>();
+        sfxHandler = GetComponent<CarSfxHandler>();
     }
 
 
@@ -46,12 +50,17 @@ public class CarController : MonoBehaviour
 
     private void ApplyEngineForce()
     {
+        if(isJumping && accelerationInput < 0)
+        {
+            accelerationInput = 0;
+        }
+
         velocityVsUp = Vector2.Dot(transform.up, rb2d.velocity);
         if (velocityVsUp > maxSpeed && accelerationInput > 0)
             return;
         if(velocityVsUp < -maxSpeed * 0.5f && accelerationInput < 0) 
             return;
-        if (rb2d.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
+        if (rb2d.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0 && !isJumping)
             return;
 
 
@@ -91,6 +100,9 @@ public class CarController : MonoBehaviour
         lateralVelocity = GetLateralVelocity();
         isBraking = false;
 
+        if (isJumping)
+            return false;
+
         if(accelerationInput < 0 && velocityVsUp > 0)
         {
             isBraking = true;
@@ -124,7 +136,19 @@ public class CarController : MonoBehaviour
         isJumping = true;
 
         float startTime = Time.time;
-        float duration = 2;
+        float duration = rb2d.velocity.magnitude * 0.05f;
+
+        jumpHeighScale = jumpHeighScale * rb2d.velocity.magnitude * 0.05f;
+        jumpHeighScale = Mathf.Clamp(jumpHeighScale, 0.0f, 1.0f);
+
+        collider.enabled = false;
+
+        sfxHandler.PlayJumpSfx();
+
+        carSprite.sortingLayerName = "Flying";
+        shadowSprite.sortingLayerName = "Flying";
+
+        rb2d.AddForce(rb2d.velocity.normalized * jumpPushScale * 10, ForceMode2D.Impulse);
 
         while(isJumping)
         {
@@ -143,12 +167,34 @@ public class CarController : MonoBehaviour
             yield return null;
         }
 
-        carSprite.transform.localScale = Vector3.one;
+        if(Physics2D.OverlapCircle(transform.position, 1.5f))
+        {
+            isJumping = false;
 
-        shadowSprite.transform.localPosition = Vector3.zero;
-        shadowSprite.transform.localScale = carSprite.transform.localScale;
+            Jump(0.2f, 0.6f);
+        }
+        else
+        {
+            carSprite.transform.localScale = Vector3.one;
 
-        isJumping = false;
+            shadowSprite.transform.localPosition = Vector3.zero;
+            shadowSprite.transform.localScale = carSprite.transform.localScale;
+
+            collider.enabled = true;
+
+
+
+            carSprite.sortingLayerName = "Default";
+            shadowSprite.sortingLayerName = "Default";
+            if(jumpHeighScale > 0.2f)
+            {
+                landing.Play();
+
+                sfxHandler.PlayLandingSfx();
+            }
+
+            isJumping = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
