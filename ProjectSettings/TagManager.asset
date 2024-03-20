@@ -45,6 +45,9 @@ TagManager:
   - name: Road
     uniqueID: 3875101119
     locked: 0
+  - name: Bridges
+    uniqueID: 4122553741
+    locked: 0
   - name: Obstacle
     uniqueID: 516065029
     locked: 0
