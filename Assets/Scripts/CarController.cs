@@ -29,6 +29,7 @@ public class CarController : MonoBehaviour
     Collider2D collider;
     CarSfxHandler sfxHandler;
 
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -204,5 +205,6 @@ public class CarController : MonoBehaviour
             JumpData jumpData = collision.GetComponent<JumpData>();
             Jump(jumpData.jumpHeightScale, jumpData.jumpPushScale);
         }
+
     }
 }

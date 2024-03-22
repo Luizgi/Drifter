@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Jump
+  - moveLayerBack
+  - moveLayerUp
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
@@ -45,12 +48,6 @@ TagManager:
   - name: Road
     uniqueID: 3875101119
     locked: 0
-  - name: Bridges
-    uniqueID: 4122553741
-    locked: 0
-  - name: Obstacle
-    uniqueID: 516065029
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -60,6 +57,12 @@ TagManager:
   - name: Flying
     uniqueID: 2832548169
     locked: 0
+  - name: Bridges
+    uniqueID: 4122553741
+    locked: 0
   - name: Particles
     uniqueID: 3383700465
+    locked: 0
+  - name: Obstacle
+    uniqueID: 516065029
     locked: 0
