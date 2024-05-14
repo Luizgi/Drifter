@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 437939861621163143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.89844, y: 0}
-  m_SizeDelta: {x: 51.2033, y: 30}
+  m_AnchorMin: {x: 0.023333333, y: 0.060000002}
+  m_AnchorMax: {x: 0.17666668, y: 0.92}
+  m_AnchoredPosition: {x: -0.6287842, y: 0.5}
+  m_SizeDelta: {x: 1.6228943, y: -0.08879852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1572010367134960058
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d15fd2049c246ba4585e489d60fcaff7, type: 3}
     m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1.
+  m_Text: 4
 --- !u!1 &5706662625577187690
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,10 +207,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 437939861621163143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.38622, y: 0}
-  m_SizeDelta: {x: 133.6295, y: 30}
+  m_AnchorMin: {x: 0.20333333, y: 0.060000002}
+  m_AnchorMax: {x: 0.95000005, y: 0.92}
+  m_AnchoredPosition: {x: -0.19999695, y: 0.5}
+  m_SizeDelta: {x: 3.7783966, y: -0.08879852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3120801921197085776
 CanvasRenderer:
@@ -241,13 +241,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d15fd2049c246ba4585e489d60fcaff7, type: 3}
     m_FontSize: 28
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -283,9 +283,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1885021497461273575}
-  - {fileID: 1332244600987549239}
   - {fileID: 4458792683617747437}
+  - {fileID: 1332244600987549239}
+  - {fileID: 1885021497461273575}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
