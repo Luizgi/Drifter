@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e585739a40136c1408552aeed0a9f7c0, type: 3}
+  m_Name: Ford GT40
+  m_EditorClassIdentifier: 
+  carUniqueID: 7
+  carUISprite: {fileID: 21300000, guid: 5430e6298a1d14f4bb0c369970425222, type: 3}
+  carPrefab: {fileID: 9020088401871792805, guid: affa1dcd03b9b5a40824cf70878730b4, type: 3}

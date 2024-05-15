@@ -8,6 +8,7 @@ TagManager:
   - moveLayerBack
   - moveLayerUp
   - CheckPoint
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
