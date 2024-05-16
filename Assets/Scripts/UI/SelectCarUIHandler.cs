@@ -15,6 +15,7 @@ public class SelectCarUIHandler : MonoBehaviour
     bool isChangingCar = false;
 
     CarUIHandler carUIHandler = null;
+    Manager manager;
 
     CarData[] carDatas;
     int selectedCarIndex = 0;
@@ -22,19 +23,20 @@ public class SelectCarUIHandler : MonoBehaviour
     [Header("Controls")]
     [SerializeField] KeyCode Left = KeyCode.A;
     [SerializeField] KeyCode Right = KeyCode.D;
-    [SerializeField] KeyCode Enter = KeyCode.Space;
+
     
 
     private void Start()
     {
+        manager = FindAnyObjectByType<Manager>();
+
         carDatas = Resources.LoadAll<CarData>("CarData/");
         StartCoroutine(SpawnCarCO(true));
     }
 
     private void Update()
     {
-
-        #region Player1
+        //P1
         if (Input.GetKeyDown(Left))
         {
             OnPreviousCar();
@@ -43,11 +45,22 @@ public class SelectCarUIHandler : MonoBehaviour
         {
             OnNextCar();
         }
-        if (Input.GetKeyDown(Enter))
+        
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             OnSelectCar(1);
+            manager.hasP1 = true;
         }
-        #endregion
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            OnSelectCar(2);
+            manager.hasP2 = true;
+        }
+        if (Input.GetKeyDown(KeyCode.JoystickButton15))
+        {
+            OnSelectCar(3);
+            manager.hasP3 = true;
+        }
     }
 
     public void OnPreviousCar()
@@ -80,13 +93,7 @@ public class SelectCarUIHandler : MonoBehaviour
     public void OnSelectCar(int player)
     {
         PlayerPrefs.SetInt($"P{player}SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-        PlayerPrefs.SetInt($"P{player}SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-        PlayerPrefs.SetInt($"P{player}SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-        PlayerPrefs.SetInt($"P{player}SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-      
         PlayerPrefs.Save();
-
-        SceneManager.LoadScene("Multiplayer");
     }
 
 
