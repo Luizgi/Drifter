@@ -16243,6 +16243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5e9bc0c2622e4419223d0a6fbbbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
 --- !u!114 &3076620433106602339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16274,3 +16275,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPositionText: {fileID: 698416415913006199}
+  carPosition: 0
+  player1Win: {fileID: 4475897295979615504, guid: d47491d729b97c24bbb11e4eb0f49100, type: 3}
+  player2Win: {fileID: 6833339939481480370, guid: 8f9c99f8bd26bce4494803fe4d49ee7a, type: 3}

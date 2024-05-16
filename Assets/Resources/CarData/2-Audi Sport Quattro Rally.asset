@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e585739a40136c1408552aeed0a9f7c0, type: 3}
-  m_Name: Audi Sport Quattro
+  m_Name: 2-Audi Sport Quattro Rally
   m_EditorClassIdentifier: 
-  carUniqueID: 0
-  carUISprite: {fileID: 21300000, guid: edc6aaa521f9ce94291b21fc94e3fcf7, type: 3}
-  carPrefab: {fileID: 9020088401871792805, guid: 2ef63b4c41010554e9ff56e4e01e3c99, type: 3}
+  carUniqueID: 2
+  carUISprite: {fileID: 21300000, guid: acc5add0367f8974d81dba53088e663a, type: 3}
+  carPrefab: {fileID: 9020088401871792805, guid: c57965cd9b7bc0d43aaa5086816c08a5, type: 3}

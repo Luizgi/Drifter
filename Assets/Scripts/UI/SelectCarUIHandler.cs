@@ -21,13 +21,28 @@ public class SelectCarUIHandler : MonoBehaviour
     int selectedCarIndex = 0;
 
     [Header("Controls")]
-    [SerializeField] KeyCode Left = KeyCode.A;
-    [SerializeField] KeyCode Right = KeyCode.D;
-
+    KeyCode Left = KeyCode.A;
+    KeyCode Right = KeyCode.D;
+    [SerializeField] string Player;
     
 
     private void Start()
     {
+        if(Player == "1")
+        {
+            Left = KeyCode.A;
+            Right = KeyCode.D;
+        }
+        else if(Player == "2")
+        {
+            Left = KeyCode.LeftArrow;
+            Right = KeyCode.RightArrow;
+        }
+        else if(Player == "3")
+        {
+            Left = KeyCode.J;
+            Right = KeyCode.L;
+        }
         manager = FindAnyObjectByType<Manager>();
 
         carDatas = Resources.LoadAll<CarData>("CarData/");
@@ -46,19 +61,19 @@ public class SelectCarUIHandler : MonoBehaviour
             OnNextCar();
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            OnSelectCar(1);
+            OnSelectP1();
             manager.hasP1 = true;
         }
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            OnSelectCar(2);
+            OnSelectP2();
             manager.hasP2 = true;
         }
-        if (Input.GetKeyDown(KeyCode.JoystickButton15))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            OnSelectCar(3);
+            OnSelectP3();
             manager.hasP3 = true;
         }
     }
@@ -90,11 +105,27 @@ public class SelectCarUIHandler : MonoBehaviour
         StartCoroutine(SpawnCarCO(false));
     }
 
-    public void OnSelectCar(int player)
+    public void OnSelectP1()
     {
-        PlayerPrefs.SetInt($"P{player}SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
+        PlayerPrefs.SetInt("P1SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
         PlayerPrefs.Save();
+        Debug.Log(("Player 1: ") + PlayerPrefs.GetInt("P1SelectedCarID"));
     }
+
+    public void OnSelectP2()
+    {
+        PlayerPrefs.SetInt("P2SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
+        PlayerPrefs.Save();
+        Debug.Log(("Player 2: ") + PlayerPrefs.GetInt("P2SelectedCarID"));
+    }
+
+    public void OnSelectP3()
+    {
+        PlayerPrefs.SetInt("P3SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
+        PlayerPrefs.Save();
+
+        Debug.Log(("Player 3: ") + PlayerPrefs.GetInt("P3SelectedCarID"));
+    }   
 
 
 
@@ -110,7 +141,7 @@ public class SelectCarUIHandler : MonoBehaviour
         carUIHandler.SetupCar(carDatas[selectedCarIndex]);
         carUIHandler.StartCarEntranceAnimation(isCarAppearingOnRightSide);
         
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         isChangingCar = false;
     }
 }

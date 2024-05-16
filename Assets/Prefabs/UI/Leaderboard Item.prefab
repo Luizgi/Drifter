@@ -209,8 +209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20333333, y: 0.060000002}
   m_AnchorMax: {x: 0.95000005, y: 0.92}
-  m_AnchoredPosition: {x: -0.19999695, y: 0.5}
-  m_SizeDelta: {x: 3.7783966, y: -0.08879852}
+  m_AnchoredPosition: {x: -0.19999695, y: 0.5000229}
+  m_SizeDelta: {x: 3.7784, y: -0.088806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3120801921197085776
 CanvasRenderer:
@@ -252,8 +252,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Player 1
+    m_LineSpacing: 2
+  m_Text: Audi Sport Quattro
 --- !u!1 &7061375456041910159
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 50}
+  m_AnchoredPosition: {x: 0, y: -23.2164}
+  m_SizeDelta: {x: 300, y: 96.4328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5638014696146192483
 MonoBehaviour:

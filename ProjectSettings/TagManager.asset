@@ -9,6 +9,10 @@ TagManager:
   - moveLayerUp
   - CheckPoint
   - SpawnPoint
+  - More Lap
+  - Lapper
+  - FirstPlayer
+  - SecondPlayer
   layers:
   - Default
   - TransparentFX

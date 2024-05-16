@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e585739a40136c1408552aeed0a9f7c0, type: 3}
-  m_Name: AM General Hummer
+  m_Name: 7-Ford GT40
   m_EditorClassIdentifier: 
-  carUniqueID: 1
-  carUISprite: {fileID: 21300000, guid: 0c6e59975fa4c204d94648022f72dd13, type: 3}
-  carPrefab: {fileID: 9020088401871792805, guid: d211e2a20576e27468490f74d3f426eb, type: 3}
+  carUniqueID: 7
+  carUISprite: {fileID: 21300000, guid: 5430e6298a1d14f4bb0c369970425222, type: 3}
+  carPrefab: {fileID: 9020088401871792805, guid: affa1dcd03b9b5a40824cf70878730b4, type: 3}

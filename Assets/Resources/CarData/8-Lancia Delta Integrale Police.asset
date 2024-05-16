@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e585739a40136c1408552aeed0a9f7c0, type: 3}
-  m_Name: Lancia Delta Integrale Yellow
+  m_Name: 8-Lancia Delta Integrale Police
   m_EditorClassIdentifier: 
-  carUniqueID: 9
-  carUISprite: {fileID: 21300000, guid: 69901a9e3b3bcd948b4ecd3d65eca4a1, type: 3}
-  carPrefab: {fileID: 9020088401871792805, guid: 58dda85f2c7f0c045a24046e889a4be1, type: 3}
+  carUniqueID: 8
+  carUISprite: {fileID: 21300000, guid: 6d1b419d8964c6e4c8165b3c73840845, type: 3}
+  carPrefab: {fileID: 9020088401871792805, guid: aa2b25bddf3f3b343aa22cf073c10411, type: 3}

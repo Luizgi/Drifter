@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e585739a40136c1408552aeed0a9f7c0, type: 3}
-  m_Name: Plymouth Hemi Quada
+  m_Name: 3-BMW M1
   m_EditorClassIdentifier: 
-  carUniqueID: 10
-  carUISprite: {fileID: 21300000, guid: 13f7b834788fc4946866bde28755d939, type: 3}
-  carPrefab: {fileID: 9020088401871792805, guid: d40d6d0580d0e644f96854459bdb7610, type: 3}
+  carUniqueID: 3
+  carUISprite: {fileID: 21300000, guid: bae759655ac8a1e428bfc0e53d4dac73, type: 3}
+  carPrefab: {fileID: 9020088401871792805, guid: 45738ad88ab1f904788911e07d7cd62f, type: 3}

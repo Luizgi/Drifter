@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
-    private Manager instance;
     public int manyPlayer;
     [SerializeField] SelectCarUIHandler selectCarUIHandler;
     public bool hasAll = false;
@@ -14,21 +13,13 @@ public class Manager : MonoBehaviour
     [HideInInspector] public bool hasP2;
     [HideInInspector] public bool hasP3;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     private void Update()
     {
         Debug.Log("Todas" + hasAll);
         Debug.Log("Player 1" + hasP1);
         Debug.Log("Player 2" + hasP2);
+
+
 
         if (manyPlayer == 2)
         {
@@ -45,15 +36,24 @@ public class Manager : MonoBehaviour
             }
         }
     }
-    #region UIMANAGER
     public void StartGame()
     {
 
-        if (hasAll == true)
+        if (hasAll == true && manyPlayer == 2)
         {
-            SceneManager.LoadScene("Multiplayer");
+            SceneManager.LoadScene("2Players");
+        }
+        else if(hasAll == true &&manyPlayer == 3)
+        {
+            //SceneManager.LoadScene("3Players");
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     public void ManyPlayer(int choosedManyPlayer)
     {
         manyPlayer = choosedManyPlayer;
@@ -63,5 +63,4 @@ public class Manager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    #endregion
 }

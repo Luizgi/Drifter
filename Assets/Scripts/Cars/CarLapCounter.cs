@@ -13,17 +13,38 @@ public class CarLapCounter : MonoBehaviour
 
     int numberOfPassedCheckpoints = 0;
 
-    int lapsCompleted = 0;
-    const int lapsToComplete = 2;
+    public int lapsCompleted = 0;
+    public const int lapsToComplete = 5;
     [SerializeField] int carPosition = 0;
+    public InputHandler input;
 
-    bool isRaceCompleted = false;
+    public bool isRaceCompleted = false;
 
 
     bool isHideRoutineRunning = false;
     float hideUIDelayTimer;
 
+
+
     public event Action<CarLapCounter> OnPassCheckpoint;
+
+    public bool WinCondition()
+    {
+        if(lapsCompleted >= lapsToComplete) 
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void Start()
+    {
+        GameObject[] checkPoints = GameObject.FindGameObjectsWithTag("CheckPoint");
+        input = GetComponent<InputHandler>();
+    }
     public void SetCarPosition(int position)
     {
         carPosition = position;
@@ -57,7 +78,6 @@ public class CarLapCounter : MonoBehaviour
             isHideRoutineRunning = false;
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("CheckPoint"))
@@ -79,6 +99,7 @@ public class CarLapCounter : MonoBehaviour
                 {
                     passedCheckPointNumber = 0;
                     lapsCompleted++;
+                    Debug.Log(lapsCompleted);
 
                     if(lapsCompleted >= lapsToComplete)
                     {
@@ -93,6 +114,7 @@ public class CarLapCounter : MonoBehaviour
                 else StartCoroutine(ShowPositionC(1.5f));
 
             }
+
         }
     }
 }

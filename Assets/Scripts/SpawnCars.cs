@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnCars : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
 
@@ -15,7 +15,7 @@ public class SpawnCars : MonoBehaviour
         {
             Transform spawnPoint = spawnPoints[i].transform;
 
-            int playerSelectedCarID = PlayerPrefs.GetInt($"P{i + 1}SelectedCarID");
+            int playerSelectedCarID = PlayerPrefs.GetInt($"P{i}SelectedCarID");
 
             foreach(CarData cardata in carDatas )
             {
@@ -28,8 +28,8 @@ public class SpawnCars : MonoBehaviour
                     break;
                 }
             }
-
-
         }
+
+        
     }
 }

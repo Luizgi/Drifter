@@ -16276,3 +16276,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPositionText: {fileID: 698416415913006199}
   carPosition: 0
+  player1Win: {fileID: 4475897295979615504, guid: d47491d729b97c24bbb11e4eb0f49100, type: 3}
+  player2Win: {fileID: 6833339939481480370, guid: 8f9c99f8bd26bce4494803fe4d49ee7a, type: 3}

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e585739a40136c1408552aeed0a9f7c0, type: 3}
-  m_Name: Chevrolet Camaro ZL-1
+  m_Name: 10-Plymouth Hemi Quada
   m_EditorClassIdentifier: 
-  carUniqueID: 4
-  carUISprite: {fileID: 21300000, guid: ed58a6091874ce146ae055c58a00844f, type: 3}
-  carPrefab: {fileID: 9020088401871792805, guid: 6858bbe5d9d48924db5e96409a20dc7d, type: 3}
+  carUniqueID: 10
+  carUISprite: {fileID: 21300000, guid: 13f7b834788fc4946866bde28755d939, type: 3}
+  carPrefab: {fileID: 9020088401871792805, guid: d40d6d0580d0e644f96854459bdb7610, type: 3}
