@@ -15,7 +15,7 @@ public class SpawnCars : MonoBehaviour
         {
             Transform spawnPoint = spawnPoints[i].transform;
 
-            int playerSelectedCarID = PlayerPrefs.GetInt($"P{i}SelectedCarID");
+            int playerSelectedCarID = PlayerPrefs.GetInt($"P{i + 1}SelectedCarID");
 
             foreach(CarData cardata in carDatas )
             {

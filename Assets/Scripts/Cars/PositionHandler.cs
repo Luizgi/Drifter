@@ -28,6 +28,7 @@ public class PositionHandler : MonoBehaviour
         leaderboardUIHandler.UpdateList(carLapCounters);
     }
 
+
     void OnPassCheckPoint(CarLapCounter carLapCounter)
     {
         carLapCounters = carLapCounters.OrderByDescending(s => s.GetNumberOfCheckPointsPassed()).ThenBy(s => s.GetTimeAtLastCheckPoint()).ToList();
