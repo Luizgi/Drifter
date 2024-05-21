@@ -24,8 +24,6 @@ public class SpawnCars : MonoBehaviour
                     GameObject playerCar = Instantiate(cardata.CarPrefab, spawnPoint.position, spawnPoint.rotation);
 
                     playerCar.GetComponent<InputHandler>().playerNumber = i + 1;
-
-                    break;
                 }
             }
         }

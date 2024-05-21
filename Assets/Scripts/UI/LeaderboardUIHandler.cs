@@ -9,7 +9,7 @@ public class LeaderboardUIHandler : MonoBehaviour
 
     SetLeaderboardItemInfo[] setLeaderboardItemInfos;
 
-    private void Start()
+    private void Awake()
     {
         VerticalLayoutGroup leaderboardLayoutGroup = GetComponentInChildren<VerticalLayoutGroup>();
         CarLapCounter[] carLapCounters = FindObjectsOfType<CarLapCounter>();

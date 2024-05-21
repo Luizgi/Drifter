@@ -11,11 +11,11 @@ public class Manager : MonoBehaviour
 
     private void Update()
     {
+        /*
         Debug.Log("Todas" + hasAll);
         Debug.Log("Player 1" + hasP1);
         Debug.Log("Player 2" + hasP2);
-
-
+        */
 
         if (manyPlayer == 2)
         {

@@ -16087,6 +16087,7 @@ GameObject:
   - component: {fileID: 8418910880176885455}
   - component: {fileID: 3076620433106602339}
   - component: {fileID: 4022158920065109767}
+  - component: {fileID: -9216717373210452083}
   m_Layer: 0
   m_Name: Plymouth Hemi Quada
   m_TagString: Untagged
@@ -16275,6 +16276,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPositionText: {fileID: 698416415913006199}
+  lapsCompleted: 0
   carPosition: 0
-  player1Win: {fileID: 4475897295979615504, guid: d47491d729b97c24bbb11e4eb0f49100, type: 3}
-  player2Win: {fileID: 6833339939481480370, guid: 8f9c99f8bd26bce4494803fe4d49ee7a, type: 3}
+  input: {fileID: 8418910880176885455}
+  isRaceCompleted: 0
+--- !u!114 &-9216717373210452083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020088401871792805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd65f62b431216b42888430353336f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

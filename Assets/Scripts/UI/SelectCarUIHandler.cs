@@ -51,7 +51,6 @@ public class SelectCarUIHandler : MonoBehaviour
 
     private void Update()
     {
-        //P1
         if (Input.GetKeyDown(Left))
         {
             OnPreviousCar();
@@ -63,17 +62,17 @@ public class SelectCarUIHandler : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.W))
         {
-            OnSelectP1();
+            OnSelectSkin(1);
             manager.hasP1 = true;
         }
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            OnSelectP2();
+            OnSelectSkin(2);
             manager.hasP2 = true;
         }
-        if (Input.GetKeyDown(KeyCode.I))
+        else if(Input.GetKeyDown(KeyCode.I))
         {
-            OnSelectP3();
+            OnSelectSkin(3);
             manager.hasP3 = true;
         }
     }
@@ -105,24 +104,32 @@ public class SelectCarUIHandler : MonoBehaviour
         StartCoroutine(SpawnCarCO(false));
     }
 
+    public void OnSelectSkin(int player)
+    {
+        PlayerPrefs.SetInt($"P{player}SelectedCarId", carDatas[selectedCarIndex].CarUniqueID);
+        Debug.Log($"Player{player}Selecionou: {PlayerPrefs.GetInt($"P{player}SelectedCarID")}");
+        PlayerPrefs.Save();
+    }
+    /*
+
     public void OnSelectP1()
     {
         PlayerPrefs.SetInt("P1SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-        Debug.Log(("Player 1: ") + PlayerPrefs.GetInt("P1SelectedCarID"));
+      //  Debug.Log(("Player 1: ") + PlayerPrefs.GetInt("P1SelectedCarID"));
     }
 
     public void OnSelectP2()
     {
         PlayerPrefs.SetInt("P2SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-        Debug.Log(("Player 2: ") + PlayerPrefs.GetInt("P2SelectedCarID"));
+      //  Debug.Log(("Player 2: ") + PlayerPrefs.GetInt("P2SelectedCarID"));
     }
 
     public void OnSelectP3()
     {
         PlayerPrefs.SetInt("P3SelectedCarID", carDatas[selectedCarIndex].CarUniqueID);
-        Debug.Log(("Player 3: ") + PlayerPrefs.GetInt("P3SelectedCarID"));
+       //  Debug.Log(("Player 3: ") + PlayerPrefs.GetInt("P3SelectedCarID"));
     }   
-    
+    */
 
 
     IEnumerator SpawnCarCO(bool isCarAppearingOnRightSide)
